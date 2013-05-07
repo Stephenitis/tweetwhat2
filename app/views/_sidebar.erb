@@ -1,0 +1,10 @@
+
+<ul>
+  <% @searches.each do |search| %>
+ <% search.each do |item| %> 
+<% item.each do |x| %>
+<div id="mentioned"> <%= x[:text] %></div>
+<%end%>
+<%end %>
+  <% end %>
+</ul>

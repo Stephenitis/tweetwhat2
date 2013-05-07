@@ -2,7 +2,7 @@ class TwitterUser < ActiveRecord::Base
   has_many :tweets
 
   def self.find_by_username(username)
-    self.find_or_create_by_user_name(username)  
+    self.find_or_create_by_user_name(username)
   end
 
   def screen_name
@@ -12,7 +12,12 @@ class TwitterUser < ActiveRecord::Base
 
   def fetch_tweets!
     Twitter.user_timeline(self.user_name).each do |tweet|
-      self.tweets << Tweet.find_or_create_by_text(:text => tweet.text)
+      @tweet = Tweet.find_or_create_by_text(
+        :text => tweet.text, 
+        :profile_image_url => tweet.profile_image_url, 
+        :retweet_count => tweet.retweet_count, 
+        :favorite_count => tweet.favorite_count)
+        self.tweets << @tweet
     end
   end
 
