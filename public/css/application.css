@@ -15,6 +15,9 @@ body {
   padding-bottom: 40px;
   background-color: #f5f5f5;
 }
+#cat{
+  display:none;
+}
 
 .form-signin {
   max-width: 300px;
@@ -40,4 +43,12 @@ body {
   height: auto;
   margin-bottom: 15px;
   padding: 7px 9px;
+}
+
+.tweet-box{
+  border:1px solid black;
+  padding: 10px;
+  margin:10px;
+  width:40%;
+  float: left;
 }
