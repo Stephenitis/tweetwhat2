@@ -2,7 +2,7 @@
   <h1>@<%= @user.user_name.capitalize %>'s recent 10 Tweets!</h1>
   <% @tweets.each do |tweet| %>
   <div class="tweet-box">
-    <h3><a href="http://twitter.com/<%=@user.user_name%>"> <%= @user.user_name.capitalize %></a></h3> 
-    <p>said "<%=tweet.text%>"</p>
+    <h3><a href="http://twitter.com/<%=@user.user_name%>"> <%= @user.user_name.capitalize %> <small>tweeted</small></a></h3> 
+    <p> "<%=tweet.text%>"</p>
   </div>
   <% end %>
